@@ -1,0 +1,48 @@
+{
+  "name": "template-mongo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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:x-oauth-basic@github.com/Unico-Global-Tech/mechtex-crm-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.6.0",
+    "axios": "^0.24.0",
+    "bcrypt": "^5.0.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "bcryptjs": "^2.4.3",
+    "chalk": "^4.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.0.0",
+    "express-rate-limit": "^5.0.0",
+    "helmet": "^4.1.0",
+    "http-status": "^1.4.0",
+    "joi": "^17.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.3",
+    "mongoose": "^6.0.12",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-github2": "^0.1.12",
+    "passport-google-oauth": "^2.0.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^13.7.0",
+    "xss-clean": "^0.1.1",
+    "swagger-jsdoc": "^4.2.0",
+    "swagger-ui-express": "^4.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

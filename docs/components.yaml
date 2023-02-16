@@ -1,0 +1,1942 @@
+openapi: 3.0.0
+info:
+  title: Protoblox
+  contact: {}
+  version: '1.0'
+servers:
+- url: http://localhost:5000/api/v1
+  variables: {}
+paths:
+  /staff/manage-student:
+    post:
+      tags:
+      - Staff - Manage Students
+      summary: Register new Student
+      operationId: RegisternewStudent
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/RegisternewStudentRequest'
+              - example:
+                  email: jhonny1232099@gmail.com
+                  password: Abcd@1234
+                  fullname: Chandan2 J
+                  mobile: '9920622446'
+            example:
+              email: jhonny1232099@gmail.com
+              password: Abcd@1234
+              fullname: Chandan2 J
+              mobile: '9920622446'
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    get:
+      tags:
+      - Staff - Manage Students
+      summary: Get all Student
+      operationId: GetallStudent
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/manage-student/single/{id}:
+    get:
+      tags:
+      - Staff - Manage Students
+      summary: Get single Student
+      operationId: GetsingleStudent
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63da1a48716d0211ebc33de4
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/manage-student/{id}:
+    delete:
+      tags:
+      - Staff - Manage Students
+      summary: Delete a Student
+      operationId: DeleteaStudent
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63da1ac5716d0211ebc33dec
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    put:
+      tags:
+      - Staff - Manage Students
+      summary: Update Student
+      operationId: UpdateStudent
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63da1a48716d0211ebc33de4
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/UpdateStudentRequest'
+              - example:
+                  email: jhonny123099@gmail.com
+                  password: Abcd@4321
+                  fullname: Chandan02 J
+                  mobile: '9920622446'
+            example:
+              email: jhonny123099@gmail.com
+              password: Abcd@4321
+              fullname: Chandan02 J
+              mobile: '9920622446'
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/user:
+    post:
+      tags:
+      - Staff
+      summary: Register new staff user
+      operationId: Registernewstaffuser
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/RegisternewstaffuserRequest'
+              - example:
+                  email: chandan.dev@protohubs.io
+                  password: Abcd@1234
+                  fullname: Chandan2
+                  role: admin
+                  mobile: '9920622446'
+            example:
+              email: chandan.dev@protohubs.io
+              password: Abcd@1234
+              fullname: Chandan2
+              role: admin
+              mobile: '9920622446'
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    get:
+      tags:
+      - Staff
+      summary: Get all staff user
+      operationId: Getallstaffuser
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/user/single/{id}:
+    get:
+      tags:
+      - Staff
+      summary: Get single staff user
+      operationId: Getsinglestaffuser
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63d8c033ca8f66b32800e5cb
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/user/{id}:
+    delete:
+      tags:
+      - Staff
+      summary: Delete a staff user
+      operationId: Deleteastaffuser
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63d8c033ca8f66b32800e5cb
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    put:
+      tags:
+      - Staff
+      summary: Update Staff User
+      operationId: UpdateStaffUser
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63d9fff9dfaaacc2473aaf15
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/UpdateStaffUserRequest'
+              - example:
+                  email: chandan.dev@protohubs.io
+                  password: Abcd@4321
+                  fullname: Chandan02
+                  role: teacher
+                  mobile: '9920622446'
+            example:
+              email: chandan.dev@protohubs.io
+              password: Abcd@4321
+              fullname: Chandan02
+              role: teacher
+              mobile: '9920622446'
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/user/login:
+    post:
+      tags:
+      - Staff
+      summary: Login Staff User
+      operationId: LoginStaffUser
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/LoginStaffUserRequest'
+              - example:
+                  email: chandan7666h@gmail.com
+                  password: Abcd@1234
+            example:
+              email: chandan7666h@gmail.com
+              password: Abcd@1234
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/user/request-reset-password-token:
+    post:
+      tags:
+      - Staff
+      summary: Forgot Password Staff - Request token
+      operationId: ForgotPasswordStaff-Requesttoken
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ForgotPasswordStaff-RequesttokenRequest'
+              - example:
+                  email: chandan7666h@gmail.com
+            example:
+              email: chandan7666h@gmail.com
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/user/reset-password/{token}:
+    put:
+      tags:
+      - Staff
+      summary: Reset Password with token
+      operationId: ResetPasswordwithtoken
+      parameters:
+      - name: token
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2M2Q4YmM2NTEwM2I5ZjE5ZWFjYTBlZDYiLCJpYXQiOjE2NzUyMzM5MTAsImV4cCI6MTY3NzgyNTkxMCwidHlwZSI6InJlc2V0UGFzc3dvcmQifQ.VwzsCy-UAuHMXf8IT3vDvrxDDzyy3typvAfwu7qAkKU
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ResetPasswordwithtokenRequest'
+              - example:
+                  password: Abcd@1234
+            example:
+              password: Abcd@1234
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/user/verify-email/{token}:
+    get:
+      tags:
+      - Staff
+      summary: Verify Email
+      operationId: VerifyEmail
+      parameters:
+      - name: token
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2M2Q4YmM2NTEwM2I5ZjE5ZWFjYTBlZDYiLCJpYXQiOjE2NzUyMzQ4MTksImV4cCI6MTY3NzgyNjgxOSwidHlwZSI6ImVtYWlsVmVyaWZpY2F0aW9uIn0.a68_RxdxeKrM4UtE0qOpXJB13WXpL2ZNBJJuiiMTB1U
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/user/resend-verify-email/{id}:
+    post:
+      tags:
+      - Staff
+      summary: Resent Verification Email
+      operationId: ResentVerificationEmail
+      parameters:
+      - name: id
+        in: path
+        description: staff user id
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63d8bc65103b9f19eaca0ed6
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/user:
+    post:
+      tags:
+      - Student
+      summary: Register new Student
+      operationId: PostRegisternewStudent
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/RegisternewStudentRequest'
+              - example:
+                  email: clashhealup1234@gmail.com
+                  password: Abcd@1234
+                  fullname: Chandan Student
+                  mobile: '9920622446'
+            example:
+              email: clashhealup1234@gmail.com
+              password: Abcd@1234
+              fullname: Chandan Student
+              mobile: '9920622446'
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/user/single/{id}:
+    get:
+      tags:
+      - Student
+      summary: Get single student
+      operationId: Getsinglestudent
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63da1575a18e227ede686b48
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/user/{id}:
+    put:
+      tags:
+      - Student
+      summary: Update student information
+      operationId: Updatestudentinformation
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63da1575a18e227ede686b48
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/UpdatestudentinformationRequest'
+              - example:
+                  email: clashhealup123@gmail.com
+                  password: Abcd@1234
+                  fullname: Chandan 02 Student
+                  mobile: '9920622449'
+            example:
+              email: clashhealup123@gmail.com
+              password: Abcd@1234
+              fullname: Chandan 02 Student
+              mobile: '9920622449'
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/user/login:
+    post:
+      tags:
+      - Student
+      summary: Login Student
+      operationId: LoginStudent
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/LoginStudentRequest'
+              - example:
+                  email: clashhealup123@gmail.com
+                  password: Abcd@4321
+            example:
+              email: clashhealup123@gmail.com
+              password: Abcd@4321
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/user/request-reset-password-token:
+    post:
+      tags:
+      - Student
+      summary: Forgot Password Student - Request token
+      operationId: ForgotPasswordStudent-Requesttoken
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ForgotPasswordStudent-RequesttokenRequest'
+              - example:
+                  email: clashhealup123@gmail.com
+            example:
+              email: clashhealup123@gmail.com
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/user/reset-password/{token}:
+    put:
+      tags:
+      - Student
+      summary: Student Reset Password with token
+      operationId: StudentResetPasswordwithtoken
+      parameters:
+      - name: token
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2M2RhMTU3NWExOGUyMjdlZGU2ODZiNDgiLCJpYXQiOjE2NzUyMzc0MzMsImV4cCI6MTY3NzgyOTQzMywidHlwZSI6InJlc2V0UGFzc3dvcmQifQ.swzMy4IbkS4dp7HUzxLur5yzDXTEIKTkJBHCqO0RTFc
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/StudentResetPasswordwithtokenRequest'
+              - example:
+                  password: Abcd@4321
+            example:
+              password: Abcd@4321
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/user/verify-email/{token}:
+    get:
+      tags:
+      - Student
+      summary: Student Verify Email
+      operationId: StudentVerifyEmail
+      parameters:
+      - name: token
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2M2RhMTU3NWExOGUyMjdlZGU2ODZiNDgiLCJpYXQiOjE2NzUyMzY3MjUsImV4cCI6MTY3NzgyODcyNSwidHlwZSI6ImVtYWlsVmVyaWZpY2F0aW9uIn0.vCcnUt5ZH2c9YMc4fobTphvvPl5YrayBJ7DNEazwcA0
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/user/resend-verify-email/{id}:
+    post:
+      tags:
+      - Student
+      summary: Student Resent Verification Email
+      operationId: StudentResentVerificationEmail
+      parameters:
+      - name: id
+        in: path
+        description: student user id
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63da12c58ba8c4948b74db38
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/course:
+    post:
+      tags:
+      - Course - Staff routes
+      summary: Create New Course
+      operationId: CreateNewCourse
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/CreateNewCourseRequest'
+              - example:
+                  name: Javascript Codsadurse
+                  thumbnail: https://miro.medium.com/max/1024/1*YQgaKfVzK-YpxyT3NYqJAg.png
+                  description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+                  meta_about:
+                  - {}
+                  duration: 90
+                  amount: '8881'
+                  createdby: 63d8bc65103b9f19eaca0ed6
+            example:
+              name: Javascript Codsadurse
+              thumbnail: https://miro.medium.com/max/1024/1*YQgaKfVzK-YpxyT3NYqJAg.png
+              description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+              meta_about:
+              - {}
+              duration: 90
+              amount: '8881'
+              createdby: 63d8bc65103b9f19eaca0ed6
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    get:
+      tags:
+      - Course - Staff routes
+      summary: Get All Course
+      operationId: GetAllCourse
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/course/{id}:
+    put:
+      tags:
+      - Course - Staff routes
+      summary: Update Course with id
+      operationId: UpdateCoursewithid
+      parameters:
+      - name: id
+        in: path
+        description: course mongo id
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63da882e1b61b7411f3bc093
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/UpdateCoursewithidRequest'
+              - example:
+                  name: Javascript Beginner Course Edited
+                  thumbnail: https://miro.medium.com/max/1024/1*YQgaKfVzK-YpxyT3NYqJAg.png
+                  description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+                  meta_about:
+                  - {}
+                  duration: 90
+                  amount: '8881'
+                  createdby: 63d8bc65103b9f19eaca0ed6
+            example:
+              name: Javascript Beginner Course Edited
+              thumbnail: https://miro.medium.com/max/1024/1*YQgaKfVzK-YpxyT3NYqJAg.png
+              description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+              meta_about:
+              - {}
+              duration: 90
+              amount: '8881'
+              createdby: 63d8bc65103b9f19eaca0ed6
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    delete:
+      tags:
+      - Course - Staff routes
+      summary: Delete a Course
+      operationId: DeleteaCourse
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63da8f0b0266a53b35f01824
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/course/single/{id}:
+    get:
+      tags:
+      - Course - Staff routes
+      summary: Get Single Course Detail
+      operationId: GetSingleCourseDetail
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63da882e1b61b7411f3bc093
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/course:
+    get:
+      tags:
+      - Course - Student routes
+      summary: Get All Course
+      operationId: GetAllCourse1
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/course/single/{id}:
+    get:
+      tags:
+      - Course - Student routes
+      summary: Get Single Course Detail
+      operationId: GetSingleCourseDetail1
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63da882e1b61b7411f3bc093
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/course/view/{id}:
+    get:
+      tags:
+      - Course - Student routes
+      summary: Course View Count
+      operationId: CourseViewCount
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63da87d11b61b7411f3bc08f
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/course/content:
+    post:
+      tags:
+      - Course Content - Staff routes
+      summary: Create New Course Content
+      operationId: CreateNewCourseContent
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/CreateNewCourseContentRequest'
+              - example:
+                  modulename: Module 1
+                  content: https://www.youtube.com/watch?v=yR2wWQYiVKM
+                  courseid: 63da87f41b61b7411f3bc091
+                  type: video
+                  paid: 'true'
+                  title: Data introduction part 2
+                  thumbnail: https://cdn.educba.com/academy/wp-content/uploads/2019/03/Introduction-To-Data-Science.jpg
+                  description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+                  createdby: 63d8bc65103b9f19eaca0ed6
+            example:
+              modulename: Module 1
+              content: https://www.youtube.com/watch?v=yR2wWQYiVKM
+              courseid: 63da87f41b61b7411f3bc091
+              type: video
+              paid: 'true'
+              title: Data introduction part 2
+              thumbnail: https://cdn.educba.com/academy/wp-content/uploads/2019/03/Introduction-To-Data-Science.jpg
+              description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+              createdby: 63d8bc65103b9f19eaca0ed6
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/course/content/{id}:
+    put:
+      tags:
+      - Course Content - Staff routes
+      summary: Update Course Content with id
+      operationId: UpdateCourseContentwithid
+      parameters:
+      - name: id
+        in: path
+        description: course content mongo id
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dba492d6f7fe395c8bcb51
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/UpdateCourseContentwithidRequest'
+              - example:
+                  modulename: Module 1
+                  content: https://www.youtube.com/watch?v=yR2wWQYiVKM
+                  type: video
+                  paid: 'true'
+                  title: Data Science Introduction
+                  thumbnail: https://cdn.educba.com/academy/wp-content/uploads/2019/03/Introduction-To-Data-Science.jpg
+                  description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+            example:
+              modulename: Module 1
+              content: https://www.youtube.com/watch?v=yR2wWQYiVKM
+              type: video
+              paid: 'true'
+              title: Data Science Introduction
+              thumbnail: https://cdn.educba.com/academy/wp-content/uploads/2019/03/Introduction-To-Data-Science.jpg
+              description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/course/content/{courseid}:
+    get:
+      tags:
+      - Course Content - Staff routes
+      summary: Get All Course Content
+      operationId: GetAllCourseContent
+      parameters:
+      - name: courseid
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63da87d11b61b7411f3bc08f
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/course/content/single/{coursecontentid}:
+    get:
+      tags:
+      - Course Content - Staff routes
+      summary: Get Single Course Content
+      operationId: GetSingleCourseContent
+      parameters:
+      - name: coursecontentid
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dba492d6f7fe395c8bcb51
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/course/content/{coursecontentid}:
+    delete:
+      tags:
+      - Course Content - Staff routes
+      summary: Delete a Course Content
+      operationId: DeleteaCourseContent
+      parameters:
+      - name: coursecontentid
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dba51ed6f7fe395c8bcb57
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/course/content/{courseid}:
+    get:
+      tags:
+      - Course Content - Student routes
+      summary: Get All Course Content
+      operationId: GetAllCourseContent1
+      parameters:
+      - name: courseid
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63da87d11b61b7411f3bc08f
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/course/content/single/{coursecontentid}:
+    get:
+      tags:
+      - Course Content - Student routes
+      summary: Get Single Course Content
+      operationId: GetSingleCourseContent1
+      parameters:
+      - name: coursecontentid
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dba492d6f7fe395c8bcb51
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/course/content/view/{id}:
+    get:
+      tags:
+      - Course Content - Student routes
+      summary: Course Content View Count
+      operationId: CourseContentViewCount
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dba492d6f7fe395c8bcb51
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/course/content/comment:
+    post:
+      tags:
+      - Course Content Comment - Staff
+      summary: Create New Course Content Comment
+      operationId: CreateNewCourseContentComment
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/CreateNewCourseContentCommentRequest'
+              - example:
+                  type: staff
+                  comment: Lorem Ipsum is simply dummy text new test. 231d test3s12
+                  cc_id: 63dba4c8d6f7fe395c8bcb53
+                  userid: 63da1575a18e227ede686b48
+            example:
+              type: staff
+              comment: Lorem Ipsum is simply dummy text new test. 231d test3s12
+              cc_id: 63dba4c8d6f7fe395c8bcb53
+              userid: 63da1575a18e227ede686b48
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/course/content/comment/{ccid}:
+    get:
+      tags:
+      - Course Content Comment - Staff
+      summary: Get All Course Content Comment
+      operationId: GetAllCourseContentComment
+      parameters:
+      - name: ccid
+        in: path
+        description: course content id
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dba4c8d6f7fe395c8bcb53
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/course/content/comment/{commentid}:
+    put:
+      tags:
+      - Course Content Comment - Staff
+      summary: Update Course Content Comment
+      operationId: UpdateCourseContentComment
+      parameters:
+      - name: commentid
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dbcc157a9616c676be7809
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/UpdateCourseContentCommentRequest'
+              - example:
+                  comment: This comment has been updated
+            example:
+              comment: This comment has been updated
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    delete:
+      tags:
+      - Course Content Comment - Staff
+      summary: Delete a Course Content Comment
+      operationId: DeleteaCourseContentComment
+      parameters:
+      - name: commentid
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 'null'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/course/content/comment:
+    post:
+      tags:
+      - Course Content Comment - Student
+      summary: Create New Course Content Comment
+      operationId: PostCreateNewCourseContentComment
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/CreateNewCourseContentCommentRequest'
+              - example:
+                  type: student
+                  comment: This is comment
+                  cc_id: 63dba4c8d6f7fe395c8bcb53
+                  userid: 63da1575a18e227ede686b48
+            example:
+              type: student
+              comment: This is comment
+              cc_id: 63dba4c8d6f7fe395c8bcb53
+              userid: 63da1575a18e227ede686b48
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/course/content/comment/{commentid}:
+    put:
+      tags:
+      - Course Content Comment - Student
+      summary: Update Course Content Comment
+      operationId: PutUpdateCourseContentComment
+      parameters:
+      - name: commentid
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dbcc157a9616c676be7809
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/UpdateCourseContentCommentRequest'
+              - example:
+                  comment: This comment has been updated
+            example:
+              comment: This comment has been updated
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    delete:
+      tags:
+      - Course Content Comment - Student
+      summary: Delete a Course Content Comment
+      operationId: DeleteaCourseContentComment1
+      parameters:
+      - name: commentid
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dbcc1c7a9616c676be780b
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/course/content/comment/{ccid}:
+    get:
+      tags:
+      - Course Content Comment - Student
+      summary: Get All Course Content Comment
+      operationId: GetAllCourseContentComment1
+      parameters:
+      - name: ccid
+        in: path
+        description: course content id
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dba4c8d6f7fe395c8bcb53
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/blog:
+    post:
+      tags:
+      - Blog - Staff routes
+      summary: Create New Blog
+      operationId: CreateNewBlog
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/CreateNewBlogRequest'
+              - example:
+                  title: Machine Learning Blog Test 1
+                  subtitle: A blog related to Machine Learning
+                  thumbnail: https://miro.medium.com/max/1024/1*YQgaKfVzK-YpxyT3NYqJAg.png
+                  htmlcontent: <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+                  tags:
+                  - ai
+                  - machine learning
+                  createdby: 63d8bc65103b9f19eaca0ed6
+            example:
+              title: Machine Learning Blog Test 1
+              subtitle: A blog related to Machine Learning
+              thumbnail: https://miro.medium.com/max/1024/1*YQgaKfVzK-YpxyT3NYqJAg.png
+              htmlcontent: <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+              tags:
+              - ai
+              - machine learning
+              createdby: 63d8bc65103b9f19eaca0ed6
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    get:
+      tags:
+      - Blog - Staff routes
+      summary: Get All Blog
+      operationId: GetAllBlog
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/blog/{id}:
+    put:
+      tags:
+      - Blog - Staff routes
+      summary: Update blog
+      operationId: Updateblog
+      parameters:
+      - name: id
+        in: path
+        description: course mongo id
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dbd5e7c62a77fcab461f3d
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/UpdateblogRequest'
+              - example:
+                  title: Machine Learning Introduction
+                  subtitle: A blog for intro into Machine Learning
+                  thumbnail: https://miro.medium.com/max/1024/1*YQgaKfVzK-YpxyT3NYqJAg.png
+                  htmlcontent: <p>Lorem Ipsum is simply dummy text of the printing and typesetti</p>
+                  tags:
+                  - ai
+                  - machine learning
+            example:
+              title: Machine Learning Introduction
+              subtitle: A blog for intro into Machine Learning
+              thumbnail: https://miro.medium.com/max/1024/1*YQgaKfVzK-YpxyT3NYqJAg.png
+              htmlcontent: <p>Lorem Ipsum is simply dummy text of the printing and typesetti</p>
+              tags:
+              - ai
+              - machine learning
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    delete:
+      tags:
+      - Blog - Staff routes
+      summary: Delete a blog
+      operationId: Deleteablog
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dbd5eac62a77fcab461f3f
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/blog/single/{id}:
+    get:
+      tags:
+      - Blog - Staff routes
+      summary: Get Single blog
+      operationId: GetSingleblog
+      parameters:
+      - name: populate
+        in: query
+        description: ''
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: createdby
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dbd5e7c62a77fcab461f3d
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/blog:
+    get:
+      tags:
+      - Blog - Student Routes
+      summary: Get All Blog
+      operationId: GetAllBlog1
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /student/blog/single/{id}:
+    get:
+      tags:
+      - Blog - Student Routes
+      summary: Get Single blog
+      operationId: GetSingleblog1
+      parameters:
+      - name: populate
+        in: query
+        description: ''
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: createdby
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dbd5e7c62a77fcab461f3d
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/blog/comment:
+    post:
+      tags:
+      - Blog - Staff
+      summary: Create New blog Comment
+      operationId: CreateNewblogComment
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/CreateNewblogCommentRequest'
+              - example:
+                  type: staff
+                  comment: Lorem Ipsum is simply dummy text  232.43
+                  blogid: 63dbd5cac62a77fcab461f39
+                  userid: 63d8bc65103b9f19eaca0ed6
+            example:
+              type: staff
+              comment: Lorem Ipsum is simply dummy text  232.43
+              blogid: 63dbd5cac62a77fcab461f39
+              userid: 63d8bc65103b9f19eaca0ed6
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/blog/comment/{blogid}:
+    get:
+      tags:
+      - Blog - Staff
+      summary: Get All Blog Comment
+      operationId: GetAllBlogComment
+      parameters:
+      - name: blogid
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dbd5ddc62a77fcab461f3b
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /staff/blog/comment/{commentid}:
+    put:
+      tags:
+      - Blog - Staff
+      summary: Update Blog Comment
+      operationId: UpdateBlogComment
+      parameters:
+      - name: commentid
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dbd8d49907af0aea084a95
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/UpdateBlogCommentRequest'
+              - example:
+                  comment: This comment has been updated
+            example:
+              comment: This comment has been updated
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    delete:
+      tags:
+      - Blog - Staff
+      summary: Delete a Blog Comment
+      operationId: DeleteaBlogComment
+      parameters:
+      - name: commentid
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+          example: 63dbd8e39907af0aea084a9d
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+components:
+  schemas:
+    RegisternewStudentRequest:
+      title: RegisternewStudentRequest
+      required:
+      - email
+      - password
+      - fullname
+      - mobile
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        fullname:
+          type: string
+        mobile:
+          type: string
+      example:
+        email: jhonny1232099@gmail.com
+        password: Abcd@1234
+        fullname: Chandan2 J
+        mobile: '9920622446'
+    UpdateStudentRequest:
+      title: UpdateStudentRequest
+      required:
+      - email
+      - password
+      - fullname
+      - mobile
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        fullname:
+          type: string
+        mobile:
+          type: string
+      example:
+        email: jhonny123099@gmail.com
+        password: Abcd@4321
+        fullname: Chandan02 J
+        mobile: '9920622446'
+    RegisternewstaffuserRequest:
+      title: RegisternewstaffuserRequest
+      required:
+      - email
+      - password
+      - fullname
+      - role
+      - mobile
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        fullname:
+          type: string
+        role:
+          type: string
+        mobile:
+          type: string
+      example:
+        email: chandan.dev@protohubs.io
+        password: Abcd@1234
+        fullname: Chandan2
+        role: admin
+        mobile: '9920622446'
+    UpdateStaffUserRequest:
+      title: UpdateStaffUserRequest
+      required:
+      - email
+      - password
+      - fullname
+      - role
+      - mobile
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        fullname:
+          type: string
+        role:
+          type: string
+        mobile:
+          type: string
+      example:
+        email: chandan.dev@protohubs.io
+        password: Abcd@4321
+        fullname: Chandan02
+        role: teacher
+        mobile: '9920622446'
+    LoginStaffUserRequest:
+      title: LoginStaffUserRequest
+      required:
+      - email
+      - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: chandan7666h@gmail.com
+        password: Abcd@1234
+    ForgotPasswordStaff-RequesttokenRequest:
+      title: ForgotPasswordStaff-RequesttokenRequest
+      required:
+      - email
+      type: object
+      properties:
+        email:
+          type: string
+      example:
+        email: chandan7666h@gmail.com
+    ResetPasswordwithtokenRequest:
+      title: ResetPasswordwithtokenRequest
+      required:
+      - password
+      type: object
+      properties:
+        password:
+          type: string
+      example:
+        password: Abcd@1234
+    UpdatestudentinformationRequest:
+      title: UpdatestudentinformationRequest
+      required:
+      - email
+      - password
+      - fullname
+      - mobile
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        fullname:
+          type: string
+        mobile:
+          type: string
+      example:
+        email: clashhealup123@gmail.com
+        password: Abcd@1234
+        fullname: Chandan 02 Student
+        mobile: '9920622449'
+    LoginStudentRequest:
+      title: LoginStudentRequest
+      required:
+      - email
+      - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: clashhealup123@gmail.com
+        password: Abcd@4321
+    ForgotPasswordStudent-RequesttokenRequest:
+      title: ForgotPasswordStudent-RequesttokenRequest
+      required:
+      - email
+      type: object
+      properties:
+        email:
+          type: string
+      example:
+        email: clashhealup123@gmail.com
+    StudentResetPasswordwithtokenRequest:
+      title: StudentResetPasswordwithtokenRequest
+      required:
+      - password
+      type: object
+      properties:
+        password:
+          type: string
+      example:
+        password: Abcd@4321
+    CreateNewCourseRequest:
+      title: CreateNewCourseRequest
+      required:
+      - name
+      - thumbnail
+      - description
+      - meta_about
+      - duration
+      - amount
+      - createdby
+      type: object
+      properties:
+        name:
+          type: string
+        thumbnail:
+          type: string
+        description:
+          type: string
+        meta_about:
+          type: array
+          items:
+            type: object
+          description: ''
+        duration:
+          type: integer
+          format: int32
+        amount:
+          type: string
+        createdby:
+          type: string
+      example:
+        name: Javascript Codsadurse
+        thumbnail: https://miro.medium.com/max/1024/1*YQgaKfVzK-YpxyT3NYqJAg.png
+        description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+        meta_about:
+        - {}
+        duration: 90
+        amount: '8881'
+        createdby: 63d8bc65103b9f19eaca0ed6
+    UpdateCoursewithidRequest:
+      title: UpdateCoursewithidRequest
+      required:
+      - name
+      - thumbnail
+      - description
+      - meta_about
+      - duration
+      - amount
+      - createdby
+      type: object
+      properties:
+        name:
+          type: string
+        thumbnail:
+          type: string
+        description:
+          type: string
+        meta_about:
+          type: array
+          items:
+            type: object
+          description: ''
+        duration:
+          type: integer
+          format: int32
+        amount:
+          type: string
+        createdby:
+          type: string
+      example:
+        name: Javascript Beginner Course Edited
+        thumbnail: https://miro.medium.com/max/1024/1*YQgaKfVzK-YpxyT3NYqJAg.png
+        description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+        meta_about:
+        - {}
+        duration: 90
+        amount: '8881'
+        createdby: 63d8bc65103b9f19eaca0ed6
+    CreateNewCourseContentRequest:
+      title: CreateNewCourseContentRequest
+      required:
+      - modulename
+      - content
+      - courseid
+      - type
+      - paid
+      - title
+      - thumbnail
+      - description
+      - createdby
+      type: object
+      properties:
+        modulename:
+          type: string
+        content:
+          type: string
+        courseid:
+          type: string
+        type:
+          type: string
+        paid:
+          type: string
+        title:
+          type: string
+        thumbnail:
+          type: string
+        description:
+          type: string
+        createdby:
+          type: string
+      example:
+        modulename: Module 1
+        content: https://www.youtube.com/watch?v=yR2wWQYiVKM
+        courseid: 63da87f41b61b7411f3bc091
+        type: video
+        paid: 'true'
+        title: Data introduction part 2
+        thumbnail: https://cdn.educba.com/academy/wp-content/uploads/2019/03/Introduction-To-Data-Science.jpg
+        description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+        createdby: 63d8bc65103b9f19eaca0ed6
+    UpdateCourseContentwithidRequest:
+      title: UpdateCourseContentwithidRequest
+      required:
+      - modulename
+      - content
+      - type
+      - paid
+      - title
+      - thumbnail
+      - description
+      type: object
+      properties:
+        modulename:
+          type: string
+        content:
+          type: string
+        type:
+          type: string
+        paid:
+          type: string
+        title:
+          type: string
+        thumbnail:
+          type: string
+        description:
+          type: string
+      example:
+        modulename: Module 1
+        content: https://www.youtube.com/watch?v=yR2wWQYiVKM
+        type: video
+        paid: 'true'
+        title: Data Science Introduction
+        thumbnail: https://cdn.educba.com/academy/wp-content/uploads/2019/03/Introduction-To-Data-Science.jpg
+        description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+    CreateNewCourseContentCommentRequest:
+      title: CreateNewCourseContentCommentRequest
+      required:
+      - type
+      - comment
+      - cc_id
+      - userid
+      type: object
+      properties:
+        type:
+          type: string
+        comment:
+          type: string
+        cc_id:
+          type: string
+        userid:
+          type: string
+      example:
+        type: staff
+        comment: Lorem Ipsum is simply dummy text new test. 231d test3s12
+        cc_id: 63dba4c8d6f7fe395c8bcb53
+        userid: 63da1575a18e227ede686b48
+    UpdateCourseContentCommentRequest:
+      title: UpdateCourseContentCommentRequest
+      required:
+      - comment
+      type: object
+      properties:
+        comment:
+          type: string
+      example:
+        comment: This comment has been updated
+    CreateNewBlogRequest:
+      title: CreateNewBlogRequest
+      required:
+      - title
+      - subtitle
+      - thumbnail
+      - htmlcontent
+      - tags
+      - createdby
+      type: object
+      properties:
+        title:
+          type: string
+        subtitle:
+          type: string
+        thumbnail:
+          type: string
+        htmlcontent:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+          description: ''
+        createdby:
+          type: string
+      example:
+        title: Machine Learning Blog Test 1
+        subtitle: A blog related to Machine Learning
+        thumbnail: https://miro.medium.com/max/1024/1*YQgaKfVzK-YpxyT3NYqJAg.png
+        htmlcontent: <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+        tags:
+        - ai
+        - machine learning
+        createdby: 63d8bc65103b9f19eaca0ed6
+    UpdateblogRequest:
+      title: UpdateblogRequest
+      required:
+      - title
+      - subtitle
+      - thumbnail
+      - htmlcontent
+      - tags
+      type: object
+      properties:
+        title:
+          type: string
+        subtitle:
+          type: string
+        thumbnail:
+          type: string
+        htmlcontent:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+          description: ''
+      example:
+        title: Machine Learning Introduction
+        subtitle: A blog for intro into Machine Learning
+        thumbnail: https://miro.medium.com/max/1024/1*YQgaKfVzK-YpxyT3NYqJAg.png
+        htmlcontent: <p>Lorem Ipsum is simply dummy text of the printing and typesetti</p>
+        tags:
+        - ai
+        - machine learning
+    CreateNewblogCommentRequest:
+      title: CreateNewblogCommentRequest
+      required:
+      - type
+      - comment
+      - blogid
+      - userid
+      type: object
+      properties:
+        type:
+          type: string
+        comment:
+          type: string
+        blogid:
+          type: string
+        userid:
+          type: string
+      example:
+        type: staff
+        comment: Lorem Ipsum is simply dummy text  232.43
+        blogid: 63dbd5cac62a77fcab461f39
+        userid: 63d8bc65103b9f19eaca0ed6
+    UpdateBlogCommentRequest:
+      title: UpdateBlogCommentRequest
+      required:
+      - comment
+      type: object
+      properties:
+        comment:
+          type: string
+      example:
+        comment: This comment has been updated
+tags:
+- name: Staff - Manage Students
+- name: Staff
+- name: Student
+- name: Course - Staff routes
+- name: Course - Student routes
+- name: Course Content - Staff routes
+- name: Course Content - Student routes
+- name: Course Content Comment - Staff
+- name: Course Content Comment - Student
+- name: Blog - Staff routes
+- name: Blog - Student Routes
+- name: Blog - Staff
+- name: Blog - Student
