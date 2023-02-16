@@ -30,8 +30,9 @@ exports.getAllUserExercise = asyncHandler(async (req, res) => {
             { name: 'categoryid', value: category },
             { name: 'user', value: user },
             { name: 'exerciseid', value: exercise },
-            { name: 'date', value: { dateFrom: date, dateTo: date }, type: "date" },
+            { name: 'createdAt', value: { dateFrom: moment(date).subtract(1,'days'), dateTo: moment(date).add(1,'days') }, type: "date" },
         ]);
+        console.log(filter)
         const exerciseData = await UserExercise.find({ ...filter }).select(select?.split(",")).limit(Number(limit)).skip(Number(page) * Number(limit)).sort({ createdAt: -1 }).populate(populate?.split(","));;
         return res.status(httpStatus.OK).json({ success: true, data: exerciseData });
     } catch (error) {
