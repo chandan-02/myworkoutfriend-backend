@@ -19,6 +19,7 @@ const get = {
         category: Joi.string(),
         user: Joi.string(),
         exercise: Joi.string(),
+        date: Joi.string(),
     }),
 };
 
