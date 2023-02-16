@@ -6,7 +6,7 @@ const create = {
         categoryid: Joi.string().required().custom(objectId),
         exerciseid: Joi.string().required().custom(objectId),
         user: Joi.string().required().custom(objectId),
-        details: Joi.array().min(1),
+        details: Joi.object().required(),
     }),
 };
 

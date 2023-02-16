@@ -14,7 +14,7 @@ exports.createUserExercise = asyncHandler(async (req, res) => {
             const ExerciseData = await UserExercise.create(req.body);
             return res.status(httpStatus.CREATED).json({ success: true, data: ExerciseData });
         }
-        Object.assign(exerciseToday, { details: [...exerciseToday.details, ...req.body?.details] });
+        Object.assign(exerciseToday, { details: [...exerciseToday.details, req.body?.details] });
         exerciseToday.save();
         return res.status(httpStatus.CREATED).json({ success: true, data: exerciseToday });
     } catch (error) {
