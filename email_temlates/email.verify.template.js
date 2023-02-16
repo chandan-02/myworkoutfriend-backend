@@ -115,7 +115,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
     <tr>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
         
-  <h1 style="margin: 0px; line-height: 140%; text-align: left; word-wrap: break-word; font-size: 22px; ">Protoblox</h1>
+  <h1 style="margin: 0px; line-height: 140%; text-align: left; word-wrap: break-word; font-size: 22px; ">My Workout Friend</h1>
 
       </td>
     </tr>
