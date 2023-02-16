@@ -9,7 +9,8 @@ const { Exercise, UserExercise } = require('../models/index');
 
 exports.createUserExercise = asyncHandler(async (req, res) => {
     try {
-        const exerciseToday = await UserExercise.findOne({ exerciseid: req.body.exerciseid });
+        const exerciseToday = await UserExercise.findOne({ exerciseid: req.body.exerciseid,user:req.body?.user });
+
         if (!exerciseToday || moment(exerciseToday.createdAt).format('DD-MM-YYYY') !== moment().format('DD-MM-YYYY')) {
             const ExerciseData = await UserExercise.create(req.body);
             return res.status(httpStatus.CREATED).json({ success: true, data: ExerciseData });
@@ -30,7 +31,7 @@ exports.getAllUserExercise = asyncHandler(async (req, res) => {
             { name: 'categoryid', value: category },
             { name: 'user', value: user },
             { name: 'exerciseid', value: exercise },
-            { name: 'createdAt', value: { dateFrom: moment(date).subtract(1,'days'), dateTo: moment(date).add(1,'days') }, type: "date" },
+            { name: 'createdAt', value: { dateFrom: moment(date).subtract(1, 'days'), dateTo: moment(date).add(1, 'days') }, type: "date" },
         ]);
         console.log(filter)
         const exerciseData = await UserExercise.find({ ...filter }).select(select?.split(",")).limit(Number(limit)).skip(Number(page) * Number(limit)).sort({ createdAt: -1 }).populate(populate?.split(","));;

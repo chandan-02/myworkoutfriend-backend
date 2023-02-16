@@ -25,6 +25,7 @@ const excerciseScheme = new mongoose.Schema(
                 set: { type: String },
                 reps: { type: String },
                 weight: { type: String },
+                rpe: { type: String },
             }
         ]
     },
