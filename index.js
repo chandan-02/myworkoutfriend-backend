@@ -15,7 +15,7 @@ require('dotenv').config()
 const ApiError = require('./utils/ApiError');
 const { authLimiter } = require('./middleware/rateLimiter');
 const connectDB = require("./config/db");
-const errorHandler = require("./middleware/errorHandler");
+const { errorHandler, errorConverter } = require("./middleware/errorHandler");
 const Routes = require('./routes/index.js');
 
 const app = express();
@@ -71,6 +71,10 @@ app.use((req, res, next) => {
   next(new ApiError(httpStatus.NOT_FOUND, 'Api Route Not found'));
 });
 // --------------------------------- error handler ---------------------------------
+// convert error to ApiError, if needed
+// app.use(errorConverter);
+
+// handle error
 app.use(errorHandler);
 
 // --------------------------------- Express App setup ---------------------------------
