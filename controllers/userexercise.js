@@ -42,10 +42,11 @@ exports.getAllUserExercise = asyncHandler(async (req, res) => {
 
 exports.deleteASet = asyncHandler(async (req, res) => {
     const { usid, id } = req.body;
+    console.log('hit')
     try {
         await UserExercise.updateOne({ _id: usid }, {
-            $pullAll: {
-                details: [{ _id: id }],
+            $pull: {
+                details: { _id: id },
             },
         });
         return res.status(httpStatus.OK).json({ success: true, data: "Delete successfully!" });
