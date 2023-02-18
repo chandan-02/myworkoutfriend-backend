@@ -33,12 +33,26 @@ exports.getAllUserExercise = asyncHandler(async (req, res) => {
             { name: 'exerciseid', value: exercise },
             { name: 'createdAt', value: { dateFrom: moment(date).startOf('day'), dateTo: moment(date).endOf('day') }, type: "date" },
         ]);
-        console.log(filter)
         const exerciseData = await UserExercise.find({ ...filter }).select(select?.split(",")).limit(Number(limit)).skip(Number(page) * Number(limit)).sort({ createdAt: 1 }).populate(populate?.split(","));;
         return res.status(httpStatus.OK).json({ success: true, data: exerciseData });
     } catch (error) {
         throw new ApiError(`Server error :${error}`, httpStatus.INTERNAL_SERVER_ERROR);
     }
 });
+
+exports.deleteASet = asyncHandler(async (req, res) => {
+    const { usid, id } = req.body;
+    try {
+        await UserExercise.updateOne({ _id: usid }, {
+            $pullAll: {
+                details: [{ _id: id }],
+            },
+        });
+        return res.status(httpStatus.OK).json({ success: true, data: "Delete successfully!" });
+    } catch (error) {
+        throw new ApiError(`Server error :${error}`, httpStatus.INTERNAL_SERVER_ERROR);
+    }
+});
+
 
 

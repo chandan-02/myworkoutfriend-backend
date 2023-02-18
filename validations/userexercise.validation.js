@@ -23,8 +23,17 @@ const get = {
     }),
 };
 
+const deleteSet = {
+    body: Joi.object().keys({
+        id: Joi.string(),
+        usid: Joi.string(),
+    }),
+};
+
+
 
 module.exports = {
     create,
-    get
+    get,
+    deleteSet
 }
