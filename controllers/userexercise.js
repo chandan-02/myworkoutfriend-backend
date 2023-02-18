@@ -34,7 +34,7 @@ exports.getAllUserExercise = asyncHandler(async (req, res) => {
             { name: 'createdAt', value: { dateFrom: moment(date).startOf('day'), dateTo: moment(date).endOf('day') }, type: "date" },
         ]);
         console.log(filter)
-        const exerciseData = await UserExercise.find({ ...filter }).select(select?.split(",")).limit(Number(limit)).skip(Number(page) * Number(limit)).sort({ createdAt: -1 }).populate(populate?.split(","));;
+        const exerciseData = await UserExercise.find({ ...filter }).select(select?.split(",")).limit(Number(limit)).skip(Number(page) * Number(limit)).sort({ createdAt: 1 }).populate(populate?.split(","));;
         return res.status(httpStatus.OK).json({ success: true, data: exerciseData });
     } catch (error) {
         throw new ApiError(`Server error :${error}`, httpStatus.INTERNAL_SERVER_ERROR);
