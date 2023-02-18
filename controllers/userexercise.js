@@ -42,7 +42,6 @@ exports.getAllUserExercise = asyncHandler(async (req, res) => {
 
 exports.deleteASet = asyncHandler(async (req, res) => {
     const { usid, id } = req.body;
-    console.log('hit')
     try {
         await UserExercise.updateOne({ _id: usid }, {
             $pull: {
