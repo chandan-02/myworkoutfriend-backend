@@ -23,9 +23,18 @@ const updateUser = {
     password: Joi.string().custom(password),
     fullname: Joi.string(),
     role: Joi.string().valid('normal', 'admin'),
-    mobile: Joi.number().min(10)
+    mobile: Joi.number().min(10),
   }),
 };
+
+const updatePlan = {
+  params: Joi.object().keys({
+    id: Joi.string().required().custom(objectId)
+  }),
+  body: Joi.object().keys({
+    plan: Joi.array()
+  }),
+}
 
 const loginUser = {
   body: Joi.object().keys({
@@ -89,5 +98,6 @@ module.exports = {
   forgotPassword,
   resetPassword,
   resendEmailVerify,
-  verifyEmail
+  verifyEmail,
+  updatePlan
 }

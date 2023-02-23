@@ -81,6 +81,18 @@ exports.updateUser = asyncHandler(async (req, res) => {
     }
 })
 
+exports.updatePlan = asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    try {
+        const staffUser = await Staff.findOne({ _id: id });
+        Object.assign(staffUser, req.body);
+        await staffUser.save();
+        return res.status(201).json({ success: true, data: staffUser });
+    } catch (error) {
+        throw new ApiError(`Server error :${error}`, httpStatus.INTERNAL_SERVER_ERROR);
+    }
+})
+
 exports.loginUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
     try {

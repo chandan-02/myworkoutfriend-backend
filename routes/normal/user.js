@@ -9,6 +9,7 @@ const router = express.Router();
 router.route('/').post(validate(studentValidation.createUser), userController.createNewStudent);
 router.route('/single/:id').get(validate(studentValidation.getSingleUserQuery), userController.getSingleStudent);
 router.route('/:id').put(validate(studentValidation.updateUser), userController.updateStudent);
+router.route('/plan/:id').put(validate(studentValidation.updateUser), userController.updateStudent);
 
 router.route('/login').post(validate(studentValidation.loginUser), userController.loginStudent);
 router.route('/request-reset-password-token').post(validate(studentValidation.forgotPassword), userController.forgetPasswordToken);

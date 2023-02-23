@@ -10,6 +10,7 @@ router.route('/').post(validate(userValidation.createUser), userController.creat
 router.route('/').get(validate(userValidation.getUserQuery), userController.getAllUser);
 router.route('/single/:id').get(validate(userValidation.getSingleUserQuery), userController.getSingleUser);
 router.route('/:id').put(validate(userValidation.updateUser), userController.updateUser);
+router.route('/plan/:id').put(validate(userValidation.updatePlan), userController.updateUser);
 router.route('/:id').delete(userController.deleteUser);
 
 router.route('/login').post(validate(userValidation.loginUser), userController.loginUser);

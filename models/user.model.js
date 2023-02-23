@@ -38,6 +38,13 @@ const adminScheme = new mongoose.Schema(
             required: true,
             trim: true,
         },
+        plan: [{
+            day: { type: String },
+            categoryid: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "category",
+            }
+        }],
         role: {
             type: String,
             enum: ["admin", "normal"],
