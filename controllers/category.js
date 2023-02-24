@@ -30,4 +30,15 @@ exports.getAllCategory = asyncHandler(async (req, res) => {
     }
 });
 
+exports.deleteCat = asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    try {
+
+        const CategoryData = await Category.deleteOne({ _id: id });
+        return res.status(httpStatus.OK).json({ success: true, data: "Category Deleted!" });
+    } catch (error) {
+        throw new ApiError(`Server error :${error}`, httpStatus.INTERNAL_SERVER_ERROR);
+    }
+});
+
 

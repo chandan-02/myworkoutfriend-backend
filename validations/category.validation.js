@@ -20,8 +20,16 @@ const get = {
     }),
 };
 
+const deleteCat = {
+    params: Joi.object().keys({
+        id: Joi.string(),
+    }),
+};
+
+
 
 module.exports = {
     create,
-    get
+    get,
+    deleteCat
 }
