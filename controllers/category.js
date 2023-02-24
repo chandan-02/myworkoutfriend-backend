@@ -17,10 +17,11 @@ exports.createCategory = asyncHandler(async (req, res) => {
 
 
 exports.getAllCategory = asyncHandler(async (req, res) => {
-    const { page, limit, select, populate } = req.query;
+    const { page, limit, select, populate, type, name } = req.query;
     try {
         const filter = createFilter([
-            //add filters here
+            { type: 'text', name: 'type', value: type },
+            { name: 'userid', value: name },
         ]);
         const CategoryData = await Category.find({ ...filter }).select(select?.split(",")).limit(Number(limit)).skip(Number(page) * Number(limit)).sort({ createdAt: -1 }).populate(populate?.split(","));;
         return res.status(httpStatus.OK).json({ success: true, data: CategoryData });
